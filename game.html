@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulator Pemborosan Energi — Extrova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/calc.js" defer></script>
+</head>
+<body data-page="game">
+  <main>
+    <section class="hero page-hero">
+      <img src="assets/img/forest-view.jpg" alt="" onerror="this.remove()">
+      <div class="wrap">
+        <h1>Kalkulator Pemborosan Energi</h1>
+        <p>Mari kita hitung dampak kebiasaan membiarkan alat elektronik menyala saat tidak digunakan.</p>
+      </div>
+    </section>
+
+    <section class="section on-cream">
+      <div class="wrap grid-2" style="margin-top:0;align-items:start">
+        <div class="reveal">
+          <h2>Bagaimana cara pakainya?</h2>
+          <ol class="steps">
+            <li>Masukkan nama alat (misal: AC, kipas angin).</li>
+            <li>Masukkan daya listrik (Watt) dari alat tersebut.</li>
+            <li>Kira-kira berapa jam per hari alat tersebut menyala sia-sia?</li>
+            <li>Berapa banyak ruang kelas yang melakukan kebiasaan ini?</li>
+            <li>Klik <strong>Hitung Dampaknya!</strong></li>
+          </ol>
+          <h3 style="margin-top:32px">Bagaimana jejak karbon dihitung?</h3>
+          <p style="margin-top:10px">Listrik di Indonesia sebagian besar berasal dari Pembangkit Listrik Tenaga Uap (PLTU) batu bara. Kalkulator ini mengasumsikan setiap 1 kWh listrik melepas sekitar <strong>0,8 kg CO₂</strong> ke udara.</p>
+          <p style="margin-top:10px">Asumsi hitungan: pemakaian <strong>30 hari</strong> dalam sebulan dan tarif listrik <strong>Rp 1.500/kWh</strong>. Daya alat bisa dilihat pada label di bodi atau adaptornya.</p>
+        </div>
+
+        <form class="panel reveal" id="formAlat" novalidate>
+          <h3>Hitung dampaknya</h3>
+          <div class="field"><label for="alatNama">Nama alat (opsional)</label>
+            <input type="text" id="alatNama" placeholder="Contoh: AC" maxlength="40" autocomplete="off"></div>
+          <div class="field"><label for="alatWatt">Daya listrik (Watt)</label>
+            <input type="number" id="alatWatt" min="1" step="any" inputmode="decimal" placeholder="Contoh: 800" required></div>
+          <div class="field"><label for="alatJam">Lama menyala (jam per hari)</label>
+            <input type="number" id="alatJam" min="0.1" max="24" step="any" inputmode="decimal" placeholder="Contoh: 3" required></div>
+          <div class="field"><label for="alatKelas">Jumlah kelas/ruangan</label>
+            <input type="number" id="alatKelas" min="1" step="1" inputmode="numeric" placeholder="Contoh: 10" required></div>
+          <button class="btn btn-dark" type="submit" style="margin-top:20px">Hitung Dampaknya!</button>
+          <p class="err" id="alatErr" role="alert" hidden></p>
+          <div class="results" id="alatHasil" aria-live="polite" hidden>
+            <div class="res"><span>Energi terbuang sia-sia</span><b id="aKwh"></b></div>
+            <div class="res"><span>Biaya listrik terbuang</span><b id="aRp"></b></div>
+            <div class="res"><span>Setara emisi karbon</span><b id="aCo2"></b><p id="aPohon"></p></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section on-forest">
+      <div class="wrap">
+        <div class="glass wide reveal">
+          <h2>Kalkulator Pemborosan Daya Komputer Lab</h2>
+          <p>Hitung berapa rupiah dan emisi karbon yang terbuang sia-sia jika PC lab, laptop, atau alat lain dibiarkan menyala saat tidak digunakan.</p>
+          <div class="grid-2" style="margin-top:8px;align-items:start">
+            <div>
+              <div class="field"><label for="labAlat">Jenis alat (standby/idle)</label>
+                <select id="labAlat">
+                  <option value="90">PC Lab / laptop + casan (90 W)</option>
+                  <option value="45">Kipas angin (45 W)</option>
+                  <option value="250">Proyektor (250 W)</option>
+                  <option value="800">AC 1 PK (800 W)</option>
+                </select></div>
+              <div class="field"><label for="labUnit">Jumlah unit menyala standby: <span class="val" id="labUnitVal"></span></label>
+                <input type="range" id="labUnit" min="1" max="40" value="10"></div>
+              <div class="field"><label for="labJam">Lama dibiarkan menyala: <span class="val" id="labJamVal"></span></label>
+                <input type="range" id="labJam" min="1" max="15" value="6"></div>
+              <div class="field"><label for="labHari">Hari aktif sekolah per bulan</label>
+                <select id="labHari">
+                  <option value="20" selected>20 hari (standar sekolah)</option>
+                  <option value="24">24 hari (dengan ekstra/proyek)</option>
+                  <option value="30">30 hari (termasuk akhir pekan)</option>
+                </select></div>
+            </div>
+            <div class="results" style="margin-top:16px" aria-live="polite">
+              <div class="res"><span>Energi terbuang sia-sia</span><b id="lKwh"></b></div>
+              <div class="res"><span>Biaya listrik terbuang</span><b id="lRp"></b></div>
+              <div class="res"><span>Setara emisi karbon</span><b id="lCo2"></b><p id="lPohon"></p></div>
+            </div>
+          </div>
+          <p class="small">Daya alat di atas adalah nilai contoh, bukan hasil pengukuran. Tarif Rp 1.500/kWh dan faktor emisi 0,8 kg CO₂/kWh adalah asumsi kalkulator. Hasilnya perkiraan, bukan tagihan atau data pengukuran sekolah.</p>
+          <a class="btn btn-solid" href="aksi.html">Lihat prioritas aksi</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

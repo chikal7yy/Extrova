@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prioritas Aksi — Extrova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="aksi">
+  <main>
+    <section class="hero page-hero">
+      <img src="assets/img/forest-view.jpg" alt="" onerror="this.remove()">
+      <div class="wrap">
+        <h1>Kebiasaan kecil, dampak nyata.</h1>
+        <p>Tiga prioritas aksi yang lahir dari butir kuesioner dengan skor terendah.</p>
+      </div>
+    </section>
+
+    <section class="section on-cream">
+      <div class="wrap">
+        <p class="lead reveal">Kami tidak menebak berapa kWh yang bisa dihemat, karena tidak ada pengukuran listrik di balik data ini. Yang kami punya: tiga kebiasaan yang paling sering dilewatkan teman-teman kita.</p>
+
+        <div class="actions">
+          <article class="action reveal">
+            <div>
+              <h3>Jeda sebelum klik</h3>
+              <span class="finding">P04: skor 3,22 • 13,7% siswa jarang membatasi</span>
+            </div>
+            <div>
+              <p>Laptop dan perangkat elektronik yang dibiarkan menyala tanpa tujuan tetap memakai daya. Membatasinya cukup dengan sadar kapan benar-benar perlu.</p>
+              <h4>Yang bisa kamu lakukan</h4>
+              <ul>
+                <li>Aktifkan mode tidur atau matikan layar saat meninggalkan meja.</li>
+                <li>Shutdown komputer dan perangkat praktik setelah sesi selesai.</li>
+                <li>Tutup perangkat yang tidak dipakai di tengah kegiatan.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="action reveal">
+            <div>
+              <h3>Ajak, jangan menyindir</h3>
+              <span class="finding">P09: skor 3,22 • 13,2% siswa jarang berani menegur</span>
+            </div>
+            <div>
+              <p>Banyak yang tahu cara hemat listrik, tetapi sungkan mengingatkan teman. Ajakan yang ramah lebih mudah diterima daripada teguran.</p>
+              <h4>Yang bisa kamu lakukan</h4>
+              <ul>
+                <li>Pakai kalimat ringan: "Lampunya aku matikan ya, kelas kosong."</li>
+                <li>Tunjuk satu penjaga saklar yang bergilir tiap hari di kelas.</li>
+                <li>Sepakati aturan hemat listrik bersama wali kelas.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="action reveal">
+            <div>
+              <h3>Pilih yang ringan energi</h3>
+              <span class="finding">P05: skor 3,30 • 13,4% siswa jarang memilih</span>
+            </div>
+            <div>
+              <p>Pilihan fasilitas dan cara berangkat juga bagian dari kebiasaan hemat energi, bukan hanya mematikan saklar.</p>
+              <h4>Yang bisa kamu lakukan</h4>
+              <ul>
+                <li>Jalan kaki atau bersepeda untuk jarak dekat.</li>
+                <li>Gunakan angkutan umum atau berangkat bersama teman searah.</li>
+                <li>Pilih ruang dengan cahaya dan udara alami bila tersedia.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <h2 style="margin-top:72px" class="reveal">Yang sudah kuat, pertahankan.</h2>
+        <div class="strong-row reveal">
+          <span class="chip">Praktik hemat energi sehari-hari (P01) <b>3,51</b></span>
+          <span class="chip">Tindakan nyata di bengkel, lab, kelas, rumah (P02) <b>3,46</b></span>
+          <span class="chip">Cabut charger setelah dipakai (P06) <b>3,45</b></span>
+        </div>
+
+        <form class="pledge reveal" id="pledge" onsubmit="return false">
+          <h3>Pembiasaan baik</h3>
+          <p>Pilih kebiasaan yang akan kamu mulai. Pilihanmu tersimpan hanya di perangkat ini.</p>
+          <ul>
+            <li><label><input type="checkbox"> Mematikan atau menidurkan laptop saat tidak dipakai</label></li>
+            <li><label><input type="checkbox"> Mengajak teman menghemat listrik dengan ramah</label></li>
+            <li><label><input type="checkbox"> Memilih jalan kaki, sepeda, atau angkutan umum untuk jarak dekat</label></li>
+            <li><label><input type="checkbox"> Mencabut charger setelah selesai dipakai</label></li>
+          </ul>
+          <output aria-live="polite"></output>
+        </form>
+
+        <div class="btn-row" style="margin-top:32px">
+          <a class="btn btn-dark" href="game.html">Hitung pemborosan energi</a>
+          <a class="btn btn-dark" href="data.html">Lihat datanya</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

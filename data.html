@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data & Fakta — Extrova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js" defer></script>
+  <script src="js/data-perilaku-energi.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/charts.js" defer></script>
+</head>
+<body data-page="data">
+  <main>
+    <section class="hero page-hero">
+      <img src="assets/img/forest-view.jpg" alt="" onerror="this.remove()">
+      <div class="wrap">
+        <h1>Apa kata data 636 siswa kelas XI?</h1>
+        <p>Hasil kuesioner perilaku hemat energi, apa adanya.</p>
+      </div>
+    </section>
+
+    <section class="section on-cream">
+      <div class="wrap">
+        <div class="panel reveal">
+          <h3>Distribusi kategori perilaku</h3>
+          <p>Setiap siswa dikelompokkan berdasarkan rata-rata skor sepuluh butir. Rata-rata seluruh siswa: <strong>3,36 dari 4,00</strong>.</p>
+          <div class="cat-wrap" style="margin-top:20px">
+            <div class="chart-box"><canvas id="chartKategori" role="img" aria-label="Donat distribusi kategori perilaku: Sangat Baik 378, Baik 234, Cukup 23, Kurang 1 siswa"></canvas></div>
+            <div>
+              <p style="margin-bottom:12px"><strong style="font:600 2.4rem var(--serif)">636</strong> responden</p>
+              <ul class="legend" id="legend"></ul>
+            </div>
+          </div>
+          <p class="src">Sumber: Kuesioner ENERGI XI (Perilaku). Kategori: Kurang 1,00–1,75, Cukup 1,76–2,50, Baik 2,51–3,25, Sangat Baik 3,26–4,00.</p>
+        </div>
+
+        <div class="findings reveal">
+          <div><b>3,51</b><p>Skor tertinggi: praktik hemat energi sehari-hari (P01). Kebiasaan dasar sudah kuat.</p></div>
+          <div><b>3,22</b><p>Skor terendah, dicapai dua butir: membatasi laptop/gawai (P04) dan menegur teman (P09).</p></div>
+          <div><b>3,51 vs 3,24</b><p>Skor tertinggi jurusan PMN dibanding PPLG, yang berbagi skor terendah dengan MPLB.</p></div>
+        </div>
+
+        <div class="panel reveal" style="margin-top:32px">
+          <h3>Rata-rata skor tiap indikator</h3>
+          <p>Tiga butir dengan skor terendah ditandai warna ochre. Arahkan kursor atau ketuk batang untuk melihat persentase "sering" dan "jarang".</p>
+          <div class="chart-box tall"><canvas id="chartButir" role="img" aria-label="Diagram batang rata-rata skor sepuluh indikator P01 sampai P10"></canvas></div>
+          <p class="src">Sumber: Kuesioner ENERGI XI, skala 1–4. Sumbu dimulai dari 2,80 agar selisih antarbutir terlihat.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel reveal">
+            <h3>Perbandingan jurusan</h3>
+            <p>Rata-rata skor per jurusan. PPLG ditandai karena kelompok pembuat situs ini berasal dari sana.</p>
+            <div class="chart-box"><canvas id="chartJurusan" role="img" aria-label="Diagram batang rata-rata skor tujuh jurusan"></canvas></div>
+            <p class="src">Sumber: Kuesioner ENERGI XI. Sumbu dimulai dari 2,80.</p>
+          </div>
+          <div class="panel reveal">
+            <h3>Rombel PPLG</h3>
+            <p>Lima rombel PPLG: XI-3 tertinggi (3,43), XI-2 terendah (3,08).</p>
+            <div class="chart-box"><canvas id="chartRombel" role="img" aria-label="Diagram batang rata-rata skor lima rombel PPLG"></canvas></div>
+            <p class="src">Sumber: Kuesioner ENERGI XI. Sumbu dimulai dari 2,80.</p>
+          </div>
+        </div>
+
+        <div class="notice reveal">
+          <strong>Cara membaca data ini.</strong> Angka berasal dari jawaban siswa pada skala 1–4, jadi menggambarkan kebiasaan yang dilaporkan sendiri, bukan pengukuran konsumsi listrik. Data dikumpulkan 12 Oktober–5 November 2026. Dari 731 baris mentah, 1 baris tidak valid dan 94 isian ganda dibuang (dipakai isian terakhir).
+        </div>
+        <div class="notice reveal" style="margin-top:12px">
+          <strong>Catatan ketidaksesuaian.</strong> Berkas data menulis partisipasi 99,4%, padahal 636 dari 639 siswa adalah 99,5%. Karena itu situs ini menampilkan jumlahnya saja. Skor PPLG dan MPLB sama-sama 3,24, jadi PPLG tidak sendirian sebagai yang terendah.
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
